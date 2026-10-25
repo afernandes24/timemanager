@@ -1,0 +1,264 @@
+/* ==========================================================================
+   TimeManager – style globalne: kolory, typografia, przyciski, pola formularzy
+   ========================================================================== */
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --border: #e6e9f0;
+  --border-strong: #d5dae5;
+  --text: #111827;
+  --text-2: #374151;
+  --muted: #6b7280;
+  --sidebar: #0f172a;
+  --sidebar-text: #cbd5e1;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-soft: #eef3ff;
+
+  --blue-bg: #dbeafe;   --blue-fg: #1d4ed8;
+  --green-bg: #dcfce7;  --green-fg: #15803d;
+  --mint-bg: #ecfdf5;   --mint-fg: #047857;
+  --yellow-bg: #fef3c7; --yellow-fg: #a16207;
+  --purple-bg: #ede9fe; --purple-fg: #6d28d9;
+  --pink-bg: #fce7f3;   --pink-fg: #be185d;
+  --orange-bg: #ffedd5; --orange-fg: #c2410c;
+  --teal-bg: #ccfbf1;   --teal-fg: #0f766e;
+  --red-bg: #fee2e2;    --red-fg: #b91c1c;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.18);
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* --- Przyciski --------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+.btn-ghost {
+  border-color: var(--border-strong);
+  background: #fff;
+  color: var(--text-2);
+}
+.btn-ghost:hover:not(:disabled) {
+  background: #f8fafc;
+}
+.btn-soft {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.btn-soft:hover {
+  background: #e0e9ff;
+}
+.btn-soft-green {
+  background: var(--green-bg);
+  color: var(--green-fg);
+}
+.btn-soft-green:hover {
+  background: #c7f5d6;
+}
+.btn-danger-ghost {
+  border-color: #fecaca;
+  background: #fff;
+  color: var(--red-fg);
+}
+.btn-danger-ghost:hover:not(:disabled) {
+  background: var(--red-bg);
+}
+.btn-sm {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+.btn-lg {
+  height: 44px;
+  padding: 0 22px;
+  font-size: 15px;
+}
+.btn-block {
+  width: 100%;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+}
+.icon-btn:hover {
+  background: #f1f5f9;
+  color: var(--text);
+}
+.icon-btn.danger:hover {
+  background: var(--red-bg);
+  color: var(--red-fg);
+}
+
+/* --- Pola formularzy --------------------------------------------------- */
+.input {
+  width: 100%;
+  height: 36px;
+  padding: 0 11px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+}
+textarea.input {
+  height: auto;
+  padding: 9px 11px;
+  resize: vertical;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.input:disabled {
+  background: #f8fafc;
+  color: var(--muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.field > span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.checkbox {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* --- Odznaki i chipy --------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.badge-select {
+  field-sizing: content;
+  appearance: none;
+  padding-right: 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.status-new { background: #f1f5f9; color: #475569; }
+.status-in_progress { background: var(--blue-bg); color: var(--blue-fg); }
+.status-done { background: var(--green-bg); color: var(--green-fg); }
+.priority-high { background: var(--red-bg); color: var(--red-fg); }
+.priority-medium { background: var(--yellow-bg); color: var(--yellow-fg); }
+.priority-low { background: #f1f5f9; color: #64748b; }
+
+.status-bg-new { background: #cbd5e1; }
+.status-bg-in_progress { background: #60a5fa; }
+.status-bg-done { background: #34d399; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 11px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--border-strong); }
+.chip-blue { border-color: transparent; background: var(--blue-bg); color: var(--blue-fg); }
+.chip-green { border-color: transparent; background: var(--green-bg); color: var(--green-fg); }
+.chip-purple { border-color: transparent; background: var(--purple-bg); color: var(--purple-fg); }
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip-row.center { justify-content: center; }
